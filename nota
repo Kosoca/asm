@@ -1,39 +1,19 @@
-ASM   
-   
-   0x0000000000001129 <+0>:	endbr64 
-   0x000000000000112d <+4>:	push   %rbp
-   0x000000000000112e <+5>:	mov    %rsp,%rbp
-   0x0000000000001131 <+8>:	movl   $0x4,-0x8(%rbp)
-   0x0000000000001138 <+15>:	movl   $0x8,-0x4(%rbp)
-   0x000000000000113f <+22>:	mov    -0x8(%rbp),%eax
-   0x0000000000001142 <+25>:	cmp    -0x4(%rbp),%eax
-   0x0000000000001145 <+28>:	jne    0x1152 <main+41>
-   0x0000000000001147 <+30>:	mov    -0x8(%rbp),%eax
-   0x000000000000114a <+33>:	sub    $0x4,%eax
-   0x000000000000114d <+36>:	mov    %eax,-0x4(%rbp)
-   0x0000000000001150 <+39>:	jmp    0x1158 <main+47>
-   0x0000000000001152 <+41>:	mov    -0x8(%rbp),%eax
-   0x0000000000001155 <+44>:	add    %eax,-0x4(%rbp)
-   0x0000000000001158 <+47>:	mov    $0x0,%eax
-   0x000000000000115d <+52>:	pop    %rbp
-   0x000000000000115e <+53>:	ret  
-   
-   INTEL
-   
-   0x0000000000001129 <+0>:	endbr64 
-   0x000000000000112d <+4>:	push   rbp
-   0x000000000000112e <+5>:	mov    rbp,rsp
-   0x0000000000001131 <+8>:	mov    DWORD PTR [rbp-0x8],0x4
-   0x0000000000001138 <+15>:	mov    DWORD PTR [rbp-0x4],0x8
-   0x000000000000113f <+22>:	mov    eax,DWORD PTR [rbp-0x8]
-   0x0000000000001142 <+25>:	cmp    eax,DWORD PTR [rbp-0x4]
-   0x0000000000001145 <+28>:	jne    0x1152 <main+41>
-   0x0000000000001147 <+30>:	mov    eax,DWORD PTR [rbp-0x8]
-   0x000000000000114a <+33>:	sub    eax,0x4
-   0x000000000000114d <+36>:	mov    DWORD PTR [rbp-0x4],eax
-   0x0000000000001150 <+39>:	jmp    0x1158 <main+47>
-   0x0000000000001152 <+41>:	mov    eax,DWORD PTR [rbp-0x8]
-   0x0000000000001155 <+44>:	add    DWORD PTR [rbp-0x4],eax
-   0x0000000000001158 <+47>:	mov    eax,0x0
-   0x000000000000115d <+52>:	pop    rbp
-   0x000000000000115e <+53>:	ret   
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>16</source>
+                    <target>16</target>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
